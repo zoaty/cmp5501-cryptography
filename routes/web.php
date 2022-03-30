@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {return view('Frequency');});
 Route::get('/frequency', function () {return view('Frequency');})->name('back');
 Route::post('/frequency-calculate', [App\Http\Controllers\FrequencyController::class, 'calculate'])->name('calculate.frequency');
