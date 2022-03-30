@@ -9,7 +9,8 @@ class FrequencyController extends Controller
     public function calculate(){
         if(isset($_POST['submit']))
         {
-            $str = $_POST['name1'];
+            $str_raw = $_POST['name1'];
+            $str = strlen(str_replace(array("\n", "\r\n", "\r"), '', $str_raw));
             $freq = array();
             $words = str_word_count($str);
             $lines = substr_count( $str, "\n" );
@@ -17,7 +18,7 @@ class FrequencyController extends Controller
             for($i = 0; $i < strlen($str); $i++)
             {
                 array_push($freq, 1);
-                for($j = $i+1; $j < strlen(str_replace(array("\n", "\r\n", "\r"), '', $str)); $j++)
+                for($j = $i+1; $j < strlen($str); $j++)
                 {
                     if($str[$i] == $str[$j])
                     {
