@@ -14,10 +14,10 @@ class FrequencyController extends Controller
             $words = str_word_count($str);
             $lines = substr_count( $str, "\n" );
 //To find length of the given string
-            for($i = 0; $i < strlen(strlen(str_replace(array("\n", "\r\n", "\r"), '', $str))); $i++)
+            for($i = 0; $i < strlen($str); $i++)
             {
                 array_push($freq, 1);
-                for($j = $i+1; $j < strlen($str); $j++)
+                for($j = $i+1; $j < strlen(str_replace(array("\n", "\r\n", "\r"), '', $str)); $j++)
                 {
                     if($str[$i] == $str[$j])
                     {
