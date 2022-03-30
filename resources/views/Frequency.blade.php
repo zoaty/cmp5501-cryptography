@@ -18,6 +18,7 @@
         <div class="d-flex justify-content-center">
             <form method="POST" action="{{route('calculate.frequency')}}">
                 @csrf
+                @method('POST')
                 <table class="mt-5">
                     <tr>
                         <td>
