@@ -9,8 +9,7 @@ class FrequencyController extends Controller
     public function calculate(){
         if(isset($_POST['submit']))
         {
-            $str_raw = $_POST['name1'];
-            $str = strlen(str_replace(array("\n", "\r\n", "\r"), '', $str_raw));
+            $str = $_POST['name1'];
             $freq = array();
             $words = str_word_count($str);
             $lines = substr_count( $str, "\n" );
